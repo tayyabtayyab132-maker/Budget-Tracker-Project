@@ -77,12 +77,13 @@ function updateSummary(){
 }
 
 function currencyformat(number) {
-    let formattedNumber = new Intl.NumberFormat("en-PK", {
-        minimumFractionDigits: 2
-    }).format(Number(number));
-    
-    return "Rs " + formattedNumber;
+    return new Intl.NumberFormat("en-PK", {
+        style: "currency",
+        currency: "PKR",
+        currencyDisplay: "symbol" // Ensures ₨ symbol is shown
+    }).format(Number(number)); // Ensure it's a number
 }
+
 
 function removeTransaction(id){
     transactions = transactions.filter(transaction=> transaction.id !== id);
