@@ -76,14 +76,12 @@ function updateSummary(){
 
 }
 
-function currencyformat(number) {
-    return new Intl.NumberFormat("en-PK", {
-        style: "currency",
-        currency: "PKR",
-        currencyDisplay: "symbol" // Ensures ₨ symbol is shown
-    }).format(Number(number)); // Ensure it's a number
+function  currencyformat(number){
+    return new Intl.NumberFormat("en-PK",{
+        style:"currency",
+        currency:"PKR",
+    }).format(number);
 }
-
 
 function removeTransaction(id){
     transactions = transactions.filter(transaction=> transaction.id !== id);
