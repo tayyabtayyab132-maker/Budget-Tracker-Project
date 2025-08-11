@@ -76,11 +76,12 @@ function updateSummary(){
 
 }
 
-function  currencyformat(number){
-    return new Intl.NumberFormat("en-PK",{
-        style:"currency",
-        currency:"PKR",
-    }).format(number);
+function currencyformat(number) {
+    let formattedNumber = new Intl.NumberFormat("en-PK", {
+        minimumFractionDigits: 2
+    }).format(Number(number));
+    
+    return "Rs " + formattedNumber;
 }
 
 function removeTransaction(id){
